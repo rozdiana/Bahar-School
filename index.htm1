@@ -1,23 +1,20 @@
-<!DOCTYPE html>
 
-<html lang="fa" dir="rtl">
+            <h3>🔬 علوم</h3>
+            <p>یادگیری علوم با آزمایش و تجربه</p>
+        </div>
 
-<head>
+    </div>
+</section>
 
-    <meta charset="UTF-8">
+<section id="contact">
+    <h2>تماس با ما</h2>
+    <p>برای اطلاعات بیشتر با مدرسه تماس بگیرید.</p>
+    <button>تماس با مدرسه</button>
+</section>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>مدرسه بهار</title>
-
-</head>
-
-<body>
-
-    <h1>به مدرسه بهار خوش آمدید</h1>
-
-    <p>وب‌سایت رسمی مدرسه بهار</p>
+<footer>
+    <p>© 2026 مدرسه نسل آینده</p>
+</footer>
 
 </body>
-
 </html>
