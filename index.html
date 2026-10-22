@@ -339,34 +339,92 @@
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
     }
 
     .gallery-item {
-      min-height: 200px;
-      border-radius: 12px;
+      position: relative;
+      min-height: 220px;
+      border-radius: 15px;
       overflow: hidden;
-      background: linear-gradient(145deg, #e8decb, #d2c1a2);
-      border: 1px solid var(--border);
+      border: 1px solid #eadde5;
       display: flex;
       align-items: end;
+      isolation: isolate;
+      box-shadow: 0 8px 22px rgba(92, 56, 78, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: radial-gradient(circle at 50% 38%, rgba(255,255,255,.9), transparent 28%), linear-gradient(145deg, #f8e8ef, #e8d5e7 58%, #f7f0e7);
     }
 
-    .gallery-item:nth-child(2n) {
-      background: linear-gradient(145deg, #dce2e6, #b9c6d2);
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 13px 28px rgba(92, 56, 78, 0.14);
     }
 
-    .gallery-item:nth-child(3n) {
-      background: linear-gradient(145deg, #e8dfd2, #d7c6b6);
+    .gallery-item::before {
+      content: "✿";
+      position: absolute;
+      z-index: -1;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-8deg);
+      color: #a34f8d;
+      font-size: 96px;
+      line-height: 1.2;
+      text-shadow: 0 5px 0 rgba(255,255,255,.42);
+      opacity: .9;
     }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 150px;
+      height: 150px;
+      right: -45px;
+      top: -48px;
+      border: 1px solid rgba(163, 79, 141, .25);
+      border-radius: 50%;
+      box-shadow: 0 0 0 14px rgba(255,255,255,.18), 0 0 0 28px rgba(163,79,141,.06);
+    }
+
+    .gallery-item:nth-child(2) {
+      background: radial-gradient(circle at 50% 38%, rgba(255,255,255,.9), transparent 28%), linear-gradient(145deg, #f8e7e5, #e8d8f0 60%, #f8f1e8);
+    }
+
+    .gallery-item:nth-child(2)::before { content: "✧"; color: #7e6caa; }
+
+    .gallery-item:nth-child(3) {
+      background: radial-gradient(circle at 50% 38%, rgba(255,255,255,.9), transparent 28%), linear-gradient(145deg, #f6e6ed, #f0dfcf 60%, #f8f1e8);
+    }
+
+    .gallery-item:nth-child(3)::before { content: "❀"; color: #a34f8d; }
+    .gallery-item:nth-child(4) { background: radial-gradient(circle at 50% 38%, rgba(255,255,255,.9), transparent 28%), linear-gradient(145deg, #e9e9f4, #e6d8eb 60%, #f8f1e8); }
+    .gallery-item:nth-child(4)::before { content: "✿"; color: #79649c; }
+    .gallery-item:nth-child(5) { background: radial-gradient(circle at 50% 38%, rgba(255,255,255,.9), transparent 28%), linear-gradient(145deg, #f8e7ee, #f2e7d7 60%, #f8f1e8); }
+    .gallery-item:nth-child(5)::before { content: "❋"; color: #a34f8d; }
+    .gallery-item:nth-child(6) { background: radial-gradient(circle at 50% 38%, rgba(255,255,255,.9), transparent 28%), linear-gradient(145deg, #e6eee2, #eee3ee 60%, #f8f1e8); }
+    .gallery-item:nth-child(6)::before { content: "❀"; color: #71845b; }
 
     .gallery-label {
+      position: relative;
+      z-index: 1;
       width: 100%;
-      background: rgba(24, 43, 73, 0.88);
+      background: rgba(86, 43, 79, 0.88);
       color: white;
-      padding: 11px 14px;
+      padding: 13px 14px;
       font-size: 14px;
+      text-align: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .gallery-note {
+      margin: 18px auto 0;
+      max-width: 720px;
+      text-align: center;
+      color: #77707a;
+      font-size: 12px;
     }
 
     .news-grid {
@@ -722,7 +780,7 @@
         <div class="section-heading">
           <h2>گالری تصاویر مدرسه</h2>
           <div class="heading-line"></div>
-          <p>فضای آموزشی و فعالیت‌های مدرسه بهار</p>
+          <p>روایت تصویری از یادگیری، خلاقیت و شکوفایی</p>
         </div>
 
         <div class="gallery-grid">
@@ -745,6 +803,7 @@
             <div class="gallery-label">فعالیت‌های گروهی</div>
           </div>
         </div>
+        <p class="gallery-note">این طرح‌ها فعلاً تزئینی هستند و بعداً می‌توان آن‌ها را با عکس‌های واقعی مدرسه جایگزین کرد.</p>
       </div>
     </section>
 
