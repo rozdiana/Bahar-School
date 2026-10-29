@@ -368,6 +368,44 @@
       box-shadow: 0 13px 28px rgba(92, 56, 78, 0.14);
     }
 
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 13px 28px rgba(92, 56, 78, 0.14);
+    }
+
+/* اندازه کارت‌های زندگی در بهار */
+#school-life .gallery-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+#school-life .life-card {
+  min-height: 220px;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+#school-life .life-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#school-life .life-card .gallery-label {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-top: auto;
+}
+@media (max-width: 520px) {
+  #school-life .life-card {
+    height: 185px;
+    min-height: 185px;
+  }
+}
     .gallery-item::before {
       content: "✿";
       position: absolute;
