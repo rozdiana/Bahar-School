@@ -392,10 +392,34 @@
 }
 
 #school-life .life-card .gallery-label {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  right: 0;
+  left: 0;
   width: 100%;
-  margin-top: auto;
+  height: 112px;
+  box-sizing: border-box;
+  margin-top: 0;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+#school-life .life-card .gallery-label h3 {
+  margin: 3px 0 5px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+#school-life .life-card .gallery-label p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
 }
     .gallery-item::before {
       content: "✿";
